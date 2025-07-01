@@ -1,0 +1,15 @@
+dbt_proj1: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: uplifted-earth-461819-f7 # Replace this with your project id
+      location: us-central1 # Replace this with your locationxx
+      dataset: db_dbt # Replace this with dbt_your_name, e.g. dbt_bilbo
+      impersonate_service_account: sa-dbt@uplifted-earth-461819-f7.iam.gserviceaccount.com # replace with service account
+    prod:
+      type: bigquery
+      method: oauth
+      project: uplifted-earth-461819-f7 # Replace this with your project id
+      dataset: db_dbt # Replace this with dbt_your_name, e.g. dbt_bilbo
